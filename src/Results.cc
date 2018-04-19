@@ -39,29 +39,26 @@ tree->Delete();
 void Results::SetupRun()
 {
   int i,j;
-
+  
   Ap=theProjectile->getA();
   Zp=theProjectile->getZ();
   Ar=theRecoil->getA();
   Zr=theRecoil->getZ();
-
+  
   dDensity=theDetector->GetPlunger()->GetStopperDensity();
-  CsIDensity=theDetector->GetCsIArray()->GetCsIDetector()->GetCsIDensity();
-  // printf("stopper density is %9.3f g/cm^3\n",dDensity);
-  // printf("CsI density is     %9.3f g/cm^3\n",CsIDensity);
-  // getc(stdin);
-
-// setup Birks constant for LY calculation and get CsI positions
-  for(i=0;i<NCsI;i++)
-    {
-      kB[i]=theDetector->GetCsIArray()->GetBirksConstant(i); // Birks constant in um/MeV
-      kBm[i]=kB[i]*CsIDensity/10.;                           // Birks constant in (mg/cm^2)/MeV
-      S[i]=theDetector->GetCsIArray()->GetLYScaling(i);
-      // printf("ipos %2d index %2d kB %.4f kBm %.7f S %.3f\n",i+1,i,kB[i],kBm[i],S[i]);
-      PP[i]=theDetector->GetCsIArray()->GetCsIDetectorPosition(i);
-      //printf("CsI detector %2d positions in cm: x %5.1f y %5.1f z %5.1f\n",i+1,PP[i].getX(),PP[i].getY(),PP[i].getZ());
-    }
-
+  
+  if (theDetector->usingCsIBall()) {
+    GetCsIBallPositions();
+    CsIDensity=theDetector->GetCsIBall()->GetCsIDetector()->GetCsIDensity();
+  }
+  else {
+    GetCsIWallPositions();    
+    CsIDensity=theDetector->GetCsIWall()->GetCsIDetector()->GetCsIDensity();
+    // printf("stopper density is %9.3f g/cm^3\n",dDensity);
+    // printf("CsI density is     %9.3f g/cm^3\n",CsIDensity);
+    // getc(stdin);
+  }
+  
   // get HPGe crystal positions
   for(i=0;i<GN;i++)
     for(j=0;j<GS;j++)
@@ -70,7 +67,7 @@ void Results::SetupRun()
 	//printf("HPGe position %d crystal %d x %f y %f z %f\n",i,j,CP[i][j].getX(),CP[i][j].getY(),CP[i][j].getZ());
 	//printf("%d %d %f %f %f\n",i+1,j,CP[i][j].getX(),CP[i][j].getY(),CP[i][j].getZ());
       }
-      
+  
   G4cout << "Results - creating tree... ";
   TreeCreate();
   G4cout << "created!" << G4endl;
@@ -102,8 +99,10 @@ void Results::TreeCreate()
 
       // ion info
       // can include path and eloss for any IonInf but they are all == 0
-      tree->Branch("pHit",&pHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:LY/D:Id/I:ring/I:fold/I");
-      tree->Branch("rHit",&rHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:LY/D:Id/I:ring/I:fold/I");
+      // tree->Branch("pHit",&pHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:LY/D:Id/I:ring/I:fold/I");
+      // tree->Branch("rHit",&rHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:LY/D:Id/I:ring/I:fold/I");
+      tree->Branch("pHit",&pHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Id/I:ring/I:fold/I");
+      tree->Branch("rHit",&rHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Id/I:ring/I:fold/I");
       tree->Branch("projGun",&gun,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
       tree->Branch("projBackingIn",&pBIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
       tree->Branch("projTargetIn",&pTIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
@@ -509,7 +508,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
  // getc(stdin);
  
  G4int Np=CsICollection->entries();
- G4double dE,dEdx,dL;
+ //G4double dE,dEdx,dL;
  if(Np>0)
    {
      for(Int_t i=0;i<Np;i++)
@@ -530,7 +529,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		   rHit.pz=(*CsICollection)[i]->GetMom().getZ()/MeV;
 		   rHit.b=(*CsICollection)[i]->GetBeta();
 		   rHit.E=(*CsICollection)[i]->GetEdep()/MeV;
-		   dE=(*CsICollection)[i]->GetEdep()/MeV;		 
+		   //dE=(*CsICollection)[i]->GetEdep()/MeV;		 
 		   rHit.w=(*CsICollection)[i]->GetWeight();
 		   rHit.Id=(*CsICollection)[i]->GetId();
 		   rHit.fold++;
@@ -542,10 +541,10 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 
 		   // in mg/cm^2
 		   rHit.path=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
-		   dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
+		   //dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
  
-		   dL=CalculateBirksLawStep(rHit.Id,dE,dEdx); // make sure to check units of kB!
-		   rHit.LY+=dL;
+		   //dL=CalculateBirksLawStep(rHit.Id,dE,dEdx); // make sure to check units of kB!
+		   //rHit.LY+=dL;
 
 		   // printf("RECOIL: id %d ring %d initial KE %9.3f MeV\nrecoil: dE %9.3f path %9.3f  dE/dx %9.3f  dL %9.3f  LY %9.3f\n",rHit.Id,rHit.ring,(*CsICollection)[i]->GetKE()/MeV,rHit.E,rHit.path,dEdx,dL,rHit.LY);
 
@@ -561,7 +560,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		   if((*CsICollection)[i]->GetId()==rHit.Id)
 		     {
 		       rHit.E+=(*CsICollection)[i]->GetEdep()/MeV;
-		       dE=(*CsICollection)[i]->GetEdep()/MeV;		 
+		       //dE=(*CsICollection)[i]->GetEdep()/MeV;		 
 
 		       // in microns
 		       // rHit.path+=(*CsICollection)[i]->GetPathLength()/um;
@@ -569,10 +568,10 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 
 		       // in mg/cm^2
 		       rHit.path+=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
-		       dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
+		       //dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
  
-		       dL=CalculateBirksLawStep(rHit.Id,dE,dEdx); // make sure to check units of kB!
-		       rHit.LY+=dL;
+		       //dL=CalculateBirksLawStep(rHit.Id,dE,dEdx); // make sure to check units of kB!
+		       //rHit.LY+=dL;
 
 		        // printf("recoil: dE %9.3f path %9.3f  dE/dx %9.3f  dL %9.3f  LY %9.3f\n",dE,rHit.path,dEdx,dL,rHit.LY);
 		     }	
@@ -592,7 +591,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		   pHit.pz=(*CsICollection)[i]->GetMom().getZ()/MeV;
 		   pHit.b=(*CsICollection)[i]->GetBeta();
 		   pHit.E=(*CsICollection)[i]->GetEdep()/MeV;
-		   dE=(*CsICollection)[i]->GetEdep()/MeV;		 
+		   //dE=(*CsICollection)[i]->GetEdep()/MeV;		 
 		   pHit.w=(*CsICollection)[i]->GetWeight();
 		   pHit.Id=(*CsICollection)[i]->GetId();
 		   pHit.fold++;
@@ -604,10 +603,10 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 
 		   // in mg/cm^2
 		   pHit.path=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
-		   dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
+		   //dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
  
-		   dL=CalculateBirksLawStep(pHit.Id,dE,dEdx); // make sure to check units of kB!
-		   pHit.LY+=dL;
+		   //dL=CalculateBirksLawStep(pHit.Id,dE,dEdx); // make sure to check units of kB!
+		   //pHit.LY+=dL;
 
 		   // printf("PROJECTILE: id %d ring %d\nprojectile: dE %9.3f path %9.3f  dE/dx %9.3f  dL %9.3f  LY %9.3f\n",pHit.Id,pHit.ring,pHit.E,pHit.path,dEdx,dL,pHit.LY);
 		 }
@@ -616,7 +615,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		   if((*CsICollection)[i]->GetId()==pHit.Id)
 		     {
 		       pHit.E+=(*CsICollection)[i]->GetEdep()/MeV;
-		       dE=(*CsICollection)[i]->GetEdep()/MeV;		 
+		       //dE=(*CsICollection)[i]->GetEdep()/MeV;		 
 		       
 		       // in microns
 		       // pHit.path+=(*CsICollection)[i]->GetPathLength()/um;
@@ -624,10 +623,10 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		       
 		       // in mg/cm^2
 		       pHit.path+=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
-		       dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
+		       //dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
  		       
-		       dL=CalculateBirksLawStep(pHit.Id,dE,dEdx); // make sure to check units of kB!
-		       pHit.LY+=dL;
+		       //dL=CalculateBirksLawStep(pHit.Id,dE,dEdx); // make sure to check units of kB!
+		       //pHit.LY+=dL;
 
 		       // printf("projectile: dE %9.3f path %9.3f  dE/dx %9.3f  dL %9.3f  LY %9.3f\n",dE,pHit.path,dEdx,dL,pHit.LY);
 		     }	
@@ -1121,98 +1120,98 @@ void Results::CsIDetectorEnergySpectrum(G4int id)
  }
 
 //=====================================================================================
-void Results::CsIRingLYSpectrum(G4int ring)
- {
+// void Results::CsIRingLYSpectrum(G4int ring)
+//  {
  
-   c=(TCanvas *)gROOT->FindObject("StdCanv");
-   if(c!=NULL)
-     c->Close();
+//    c=(TCanvas *)gROOT->FindObject("StdCanv");
+//    if(c!=NULL)
+//      c->Close();
 
-   c=new TCanvas("StdCanv","StdCanv",700,500);
-   c->Clear();
-   c->cd();
+//    c=new TCanvas("StdCanv","StdCanv",700,500);
+//    c->Clear();
+//    c->cd();
  
-   h=(TH1D *)gROOT->FindObject("ring CsI LY");
-   if(h==NULL)
-     h=new TH1D("ring CsI LY","ring CsI LY",S8K,0,S32K);
-   h->Reset();
+//    h=(TH1D *)gROOT->FindObject("ring CsI LY");
+//    if(h==NULL)
+//      h=new TH1D("ring CsI LY","ring CsI LY",S8K,0,S32K);
+//    h->Reset();
 
-   g=(TH1D *)gROOT->FindObject("ring CsI LY W");
-   if(g==NULL)
-     g=new TH1D("ring CsI LY W","ring CsI LY W",S8K,0,S32K);
-   g->Reset();
+//    g=(TH1D *)gROOT->FindObject("ring CsI LY W");
+//    if(g==NULL)
+//      g=new TH1D("ring CsI LY W","ring CsI LY W",S8K,0,S32K);
+//    g->Reset();
 
-   Int_t N=tree->GetEntries();
+//    Int_t N=tree->GetEntries();
   
-   for(Int_t i=0;i<N;i++)
-     {
-       tree->GetEntry(i);
-       if(rHit.ring==ring)
-	   {
-	     h->Fill(rHit.LY);     
-	     g->Fill(rHit.LY,rHit.w);
-	   }
-       if(pHit.ring==ring)
-       	   {
-       	     h->Fill(pHit.LY);     
-       	     g->Fill(pHit.LY,pHit.w);
-       	   }
-     }
+//    for(Int_t i=0;i<N;i++)
+//      {
+//        tree->GetEntry(i);
+//        if(rHit.ring==ring)
+// 	   {
+// 	     h->Fill(rHit.LY);     
+// 	     g->Fill(rHit.LY,rHit.w);
+// 	   }
+//        if(pHit.ring==ring)
+//        	   {
+//        	     h->Fill(pHit.LY);     
+//        	     g->Fill(pHit.LY,pHit.w);
+//        	   }
+//      }
 	   
-   g->GetXaxis()->SetTitle("Light Yield [arb.]");
-   g->GetYaxis()->SetTitle("Counts");
-   h->SetLineColor(kBlue);
-   h->Draw();
-   g->SetLineColor(kRed);
-   g->Draw("same");
- }
+//    g->GetXaxis()->SetTitle("Light Yield [arb.]");
+//    g->GetYaxis()->SetTitle("Counts");
+//    h->SetLineColor(kBlue);
+//    h->Draw();
+//    g->SetLineColor(kRed);
+//    g->Draw("same");
+//  }
 
-//=====================================================================================
-void Results::CsIDetectorLYSpectrum(G4int id)
- {
+// //=====================================================================================
+// void Results::CsIDetectorLYSpectrum(G4int id)
+//  {
  
-   c=(TCanvas *)gROOT->FindObject("StdCanv");
-   if(c!=NULL)
-     c->Close();
+//    c=(TCanvas *)gROOT->FindObject("StdCanv");
+//    if(c!=NULL)
+//      c->Close();
 
-   c=new TCanvas("StdCanv","StdCanv",700,500);
-   c->Clear();
-   c->cd();
+//    c=new TCanvas("StdCanv","StdCanv",700,500);
+//    c->Clear();
+//    c->cd();
  
-   h=(TH1D *)gROOT->FindObject("det CsI LY");
-   if(h==NULL)
-     h=new TH1D("det CsI LY","det CsI LY",S8K,0,S32K);
-   h->Reset();
+//    h=(TH1D *)gROOT->FindObject("det CsI LY");
+//    if(h==NULL)
+//      h=new TH1D("det CsI LY","det CsI LY",S8K,0,S32K);
+//    h->Reset();
 
-   g=(TH1D *)gROOT->FindObject("det CsI LY W");
-   if(g==NULL)
-     g=new TH1D("det CsI LY W","det CsI LY W",S8K,0,S32K);
-   g->Reset();
+//    g=(TH1D *)gROOT->FindObject("det CsI LY W");
+//    if(g==NULL)
+//      g=new TH1D("det CsI LY W","det CsI LY W",S8K,0,S32K);
+//    g->Reset();
 
-   Int_t N=tree->GetEntries();
+//    Int_t N=tree->GetEntries();
   
-   for(Int_t i=0;i<N;i++)
-     {
-       tree->GetEntry(i);
-       if(rHit.Id==id)
-	   {
-	     h->Fill(rHit.LY);     
-	     g->Fill(rHit.LY,rHit.w);
-	   }
-       if(pHit.Id==id)
-       	   {
-       	     h->Fill(pHit.LY);     
-       	     g->Fill(pHit.LY,pHit.w);
-       	   }
-     }
+//    for(Int_t i=0;i<N;i++)
+//      {
+//        tree->GetEntry(i);
+//        if(rHit.Id==id)
+// 	   {
+// 	     h->Fill(rHit.LY);     
+// 	     g->Fill(rHit.LY,rHit.w);
+// 	   }
+//        if(pHit.Id==id)
+//        	   {
+//        	     h->Fill(pHit.LY);     
+//        	     g->Fill(pHit.LY,pHit.w);
+//        	   }
+//      }
 	   
-   g->GetXaxis()->SetTitle("Light Yield [arb.]");
-   g->GetYaxis()->SetTitle("Counts");
-   h->SetLineColor(kBlue);
-   h->Draw();
-   g->SetLineColor(kRed);
-   g->Draw("same");
- }
+//    g->GetXaxis()->SetTitle("Light Yield [arb.]");
+//    g->GetYaxis()->SetTitle("Counts");
+//    h->SetLineColor(kBlue);
+//    h->Draw();
+//    g->SetLineColor(kRed);
+//    g->Draw("same");
+//  }
 
 //=====================================================================================
 void Results::CsIFold()
@@ -1515,7 +1514,7 @@ void Results::ReportCrystalPositions()
        
  } 
 //=====================================================================================
-void Results::CalculateCsIPositions()
+void Results::CalculateCsIWallPositions()
  {
    Double_t x[NCsI],y[NCsI],z[NCsI],n[NCsI];
    Double_t xx,yy,zz;
@@ -1555,10 +1554,10 @@ void Results::CalculateCsIPositions()
 	 PP[det].setY(yy);
 	 PP[det].setZ(zz);
        }
-   ReportCsIPositions();
+   ReportCsIWallPositions();
  }
 //=====================================================================================
-void Results::ReportCsIPositions()
+void Results::ReportCsIWallPositions()
  {
    Double_t xx,yy,zz,rr,theta,phi;
    Double_t chZ = theDetector->GetChamber()->GetPosZ();
@@ -1579,6 +1578,33 @@ void Results::ReportCsIPositions()
        }
        
  } 
+ 
+ //=====================================================================================
+void Results::GetCsIWallPositions() {
+  Double_t xx, yy, zz;
+  for (Int_t det = 0; det < NCsI; det++) {
+    xx = theDetector->GetCsIWall()->GetXPos(det + 1);
+    yy = theDetector->GetCsIWall()->GetYPos(det + 1);
+    zz = theDetector->GetCsIWall()->GetZPos();
+    PP[det].setX(xx);
+    PP[det].setY(yy);
+    PP[det].setZ(zz);
+  }
+}
+
+//=====================================================================================
+void Results::GetCsIBallPositions() {
+  Double_t xx, yy, zz;
+  for (Int_t det = 0; det < NCsISph; det++) {
+    xx = theDetector->GetCsIBall()->GetXPos(det + 1);
+    yy = theDetector->GetCsIBall()->GetYPos(det + 1);
+    zz = theDetector->GetCsIBall()->GetZPos();
+    PP[det].setX(xx);
+    PP[det].setY(yy);
+    PP[det].setZ(zz);
+  }
+}
+ 
 //=====================================================================================
 void Results::GroupCosDist()
  {   
@@ -1676,39 +1702,39 @@ G4double Results::CalculatePath(G4ThreeVector iPos, G4ThreeVector Pos)
   return dPos.mag();
 }
 
-//=====================================================================================
-void Results::SetCsILYResponse(G4int id,G4double k,G4double s)
-{
-  G4int i;
+// //=====================================================================================
+// void Results::SetCsILYResponse(G4int id,G4double k,G4double s)
+// {
+//   G4int i;
 
-  if(id==-1) // all detectors
-    {
-      for(i=1;i<=NCsI;i++)
-	{
-	  theDetector->GetCsIArray()->SetBirksConstant(i,k);
-	  theDetector->GetCsIArray()->SetLYScaling(i,s);
-	}
-    }
-  else if(id>=1 && id<=NCsI) // single detector
-    {
-      theDetector->GetCsIArray()->SetBirksConstant(id,k);
-      theDetector->GetCsIArray()->SetLYScaling(id,s);
-    }
-  else
-    {
-      printf("Error: No CsI for id %d\n",id);
-      exit(-1);
-    }
-}
+//   if(id==-1) // all detectors
+//     {
+//       for(i=1;i<=NCsI;i++)
+// 	{
+// 	  theDetector->GetCsIWall()->SetBirksConstant(i,k);
+// 	  theDetector->GetCsIWall()->SetLYScaling(i,s);
+// 	}
+//     }
+//   else if(id>=1 && id<=NCsI) // single detector
+//     {
+//       theDetector->GetCsIWall()->SetBirksConstant(id,k);
+//       theDetector->GetCsIWall()->SetLYScaling(id,s);
+//     }
+//   else
+//     {
+//       printf("Error: No CsI for id %d\n",id);
+//       exit(-1);
+//     }
+// }
 
 //=====================================================================================
-G4double Results::CalculateBirksLawStep(G4int id,G4double dE,G4double dEdx)
-{
-  G4double dL;    // differential light yield
-  //dL = S[id-1]*dE/(1+kB[id-1]*dEdx); // for dEdx in MeV/um
-  dL = S[id-1]*dE/(1+kBm[id-1]*dEdx); // for dEdx in MeV/(mg/cm^2)
-  return dL;
-}
+// G4double Results::CalculateBirksLawStep(G4int id,G4double dE,G4double dEdx)
+// {
+//   G4double dL;    // differential light yield
+//   //dL = S[id-1]*dE/(1+kB[id-1]*dEdx); // for dEdx in MeV/um
+//   dL = S[id-1]*dE/(1+kBm[id-1]*dEdx); // for dEdx in MeV/(mg/cm^2)
+//   return dL;
+// }
 
 
 //=====================================================================================

@@ -20,6 +20,9 @@ DetectorConstruction_Messenger::DetectorConstruction_Messenger(DetectorConstruct
   SPCmd->SetGuidance("Shift the plunger along the z (beam) axis wrt chamber center");
   SPCmd->SetParameterName("choice",false);
   SPCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+
+  BallCmd = new G4UIcmdWithoutParameter("/DetectorConstruction/UseCsIBall",this);
+  BallCmd->SetGuidance("Use the CsI ball array instead of the wall array (which is default).");
 }
 
 
@@ -32,6 +35,7 @@ DetectorConstruction_Messenger::~DetectorConstruction_Messenger()
   delete RepCmd;
   delete STCmd;
   delete SPCmd;
+  delete BallCmd;
 }
 
 
@@ -45,6 +49,9 @@ void DetectorConstruction_Messenger::SetNewValue(G4UIcommand* command,G4String n
 
   if( command == SPCmd )
     { theDetector->ShiftPlunger(SPCmd->GetNewDoubleValue(newValue)); }
+
+  if( command == BallCmd )
+    { theDetector->UseCsIBall(true);}
   
 }
 

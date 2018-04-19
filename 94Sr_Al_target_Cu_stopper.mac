@@ -1,4 +1,9 @@
 #
+# Uncomment for ball
+#
+/DetectorConstruction/UseCsIBall
+
+#
 # Initialize
 #
 /Run/Initialize
@@ -52,7 +57,7 @@
 #
 # CsI array setup
 #
-/Results/CsI/SetLYResponse -1. 1.5 1000.
+#/Results/CsI/SetLYResponse -1. 1.5 1000.
 
 #
 # Reaction setup
@@ -73,7 +78,7 @@
 #
 # Run
 #
-/run/beamOn 10000
+/run/beamOn 1000000
 #
 # Stuff to save
 #

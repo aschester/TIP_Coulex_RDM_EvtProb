@@ -95,26 +95,26 @@ Results_Messenger::Results_Messenger(Results* Res) :results(Res)
   PDESCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
   PDESCmd->SetDefaultValue(1);
 
-  PRLYSCmd = new G4UIcmdWithAnInteger("/Results/CsI/RingLYSpectrum",this);
-  PRLYSCmd->SetGuidance("CsI-diode light yield spectrum for a selected ring");  
-  PRLYSCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
-  PRLYSCmd->SetDefaultValue(1);
+  // PRLYSCmd = new G4UIcmdWithAnInteger("/Results/CsI/RingLYSpectrum",this);
+  // PRLYSCmd->SetGuidance("CsI-diode light yield spectrum for a selected ring");  
+  // PRLYSCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  // PRLYSCmd->SetDefaultValue(1);
 
-  PDLYSCmd = new G4UIcmdWithAnInteger("/Results/CsI/DetectorLYSpectrum",this);
-  PDLYSCmd->SetGuidance("CsI-diode light yield spectrum for a selected detector");  
-  PDLYSCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
-  PDLYSCmd->SetDefaultValue(1);
+  // PDLYSCmd = new G4UIcmdWithAnInteger("/Results/CsI/DetectorLYSpectrum",this);
+  // PDLYSCmd->SetGuidance("CsI-diode light yield spectrum for a selected detector");  
+  // PDLYSCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  // PDLYSCmd->SetDefaultValue(1);
 
   PRFCmd = new G4UIcmdWithoutParameter("/Results/CsI/Fold",this);
   PRFCmd->SetGuidance("CsI fold histogram");
 
-  SLYCmd = new G4UIcmdWith3Vector("/Results/CsI/SetLYResponse",this);
-  SLYCmd->SetGuidance("Set Birk's constant and LY scaling factor for CsI detectors");  
-  SLYCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
-  G4ThreeVector ly;
-  ly.setX(-1);ly.setY(1.5);ly.setZ(1000);
-  SLYCmd->SetDefaultValue(ly);
-  SLYCmd->SetParameterName("CsI detector","kB [um/MeV]","S",true,false);
+  // SLYCmd = new G4UIcmdWith3Vector("/Results/CsI/SetLYResponse",this);
+  // SLYCmd->SetGuidance("Set Birk's constant and LY scaling factor for CsI detectors");  
+  // SLYCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  // G4ThreeVector ly;
+  // ly.setX(-1);ly.setY(1.5);ly.setZ(1000);
+  // SLYCmd->SetDefaultValue(ly);
+  // SLYCmd->SetParameterName("CsI detector","kB [um/MeV]","S",true,false);
 
   //this is for groups
   RCSPCmd = new G4UIcmdWithoutParameter("/Results/Groups/CalculateCrystalPositions",this);
@@ -171,10 +171,10 @@ Results_Messenger::~Results_Messenger()
  //this is for CsI-diode spectrum
   delete PRESCmd;
   delete PDESCmd;
-  delete PRLYSCmd;
-  delete PDLYSCmd;
+  // delete PRLYSCmd;
+  // delete PDLYSCmd;
   delete PRFCmd;
-  delete SLYCmd;
+  // delete SLYCmd;
 
   //this is for the groups
   delete RCSPCmd;
@@ -246,20 +246,20 @@ void Results_Messenger::SetNewValue(G4UIcommand* command,G4String newValue)
    { results->CsIRingEnergySpectrum(PRESCmd->GetNewIntValue(newValue)); }
  if( command == PDESCmd )
    { results->CsIDetectorEnergySpectrum(PDESCmd->GetNewIntValue(newValue)); }
- if( command == PRLYSCmd )
-   { results->CsIRingLYSpectrum(PRLYSCmd->GetNewIntValue(newValue)); }
-if( command == PDLYSCmd )
-   { results->CsIDetectorLYSpectrum(PDLYSCmd->GetNewIntValue(newValue)); }
+ // if( command == PRLYSCmd )
+//    { results->CsIRingLYSpectrum(PRLYSCmd->GetNewIntValue(newValue)); }
+// if( command == PDLYSCmd )
+//    { results->CsIDetectorLYSpectrum(PDLYSCmd->GetNewIntValue(newValue)); }
  if( command == PRFCmd )
     { results->CsIFold(); }
- if( command == SLYCmd )
-   { 
-     G4ThreeVector ly=SLYCmd->GetNew3VectorValue(newValue);
-     G4int pos=(G4int)ly.getX();
-     G4double kB=ly.getY();
-     G4double S=ly.getZ();
-     results->SetCsILYResponse(pos,kB,S);
-   }
+ // if( command == SLYCmd )
+ //   { 
+ //     G4ThreeVector ly=SLYCmd->GetNew3VectorValue(newValue);
+ //     G4int pos=(G4int)ly.getX();
+ //     G4double kB=ly.getY();
+ //     G4double S=ly.getZ();
+ //     results->SetCsILYResponse(pos,kB,S);
+ //   }
 
  //this is for the groups
  if( command == RCSPCmd )
@@ -267,9 +267,9 @@ if( command == PDLYSCmd )
  if( command == RRSPCmd )
    { results->ReportCrystalPositions(); }
  if( command == PCSPCmd )
-   { results->CalculateCsIPositions(); }
+   { results->CalculateCsIWallPositions(); }
  if( command == PRSPCmd )
-   { results->ReportCsIPositions(); }
+   { results->ReportCsIWallPositions(); }
  if( command == RCSDCmd )
    { results->GroupCosDist(); }
 if( command == CDFCmd )

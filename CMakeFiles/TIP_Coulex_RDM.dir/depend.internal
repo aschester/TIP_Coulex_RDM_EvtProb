@@ -193,6 +193,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/TIP_Coulex_RDM.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
  /opt/geant4.10.03.p03/include/Geant4/G4He3.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonConstructor.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXHandler.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXScalingICRU73.hh
@@ -380,6 +381,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/TIP_Coulex_RDM.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryPoint.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Triton.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
@@ -405,6 +408,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/TIP_Coulex_RDM.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -609,7 +613,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/TIP_Coulex_RDM.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/DetectorConstruction_Messenger.hh
@@ -642,6 +648,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/TIP_Coulex_RDM.cc.o
  include/SteppingAction.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -1162,6 +1169,305 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array.cc.o
  include/TrackerCsISD.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o
+ /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_array_spherical.cc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/BasicVector3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Normal3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Point3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Transform3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Transform3D.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Vector3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/DualRand.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/JamesRandom.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/MTwistEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/MixMaxRng.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBinomial.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBinomial.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBit.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBit.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBreitWigner.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBreitWigner.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandChiSquare.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandChiSquare.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandExpZiggurat.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandExponential.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandExponential.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandFlat.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandFlat.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGamma.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGamma.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGauss.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGauss.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGaussQ.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGaussQ.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGaussZiggurat.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGeneral.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGeneral.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandLandau.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandLandau.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandPoisson.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandPoisson.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandPoissonQ.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandPoissonQ.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandStudentT.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandStudentT.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/Random.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/Random.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandomEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandomEngine.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/Randomize.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RanecuEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/Ranlux64Engine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RanluxEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RanshiEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/mixmax.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Units/PhysicalConstants.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Units/SystemOfUnits.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Utility/defs.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Utility/memory.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Utility/thread_local.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/AxisAngle.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/AxisAngle.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/LorentzVector.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/LorentzVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/Rotation.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/Rotation.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationInterfaces.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationInterfaces.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationX.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationX.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationY.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationY.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationZ.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationZ.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/ThreeVector.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/ThreeVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4AffineTransform.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AffineTransform.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Allocator.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AllocatorPool.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ApplicationState.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AutoLock.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AuxiliaryNavServices.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AuxiliaryNavServices.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4BlockingList.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4BlockingList.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4BooleanSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4BooleanSolid.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Box.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Box.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4CSGSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Circle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ClassificationOfNewTrack.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4CollectionNameVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Color.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Colour.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DCofThisEvent.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DataVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DataVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4DisplacedSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DynamicParticle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DynamicParticle.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ElectronOccupancy.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Element.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ElementTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ElementVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Event.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4EventManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ExceptionSeverity.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Exp.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4FastVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ForceCondition.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4GPILSelection.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4GRSSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4GRSSolid.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4GRSVolume.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4GRSVolume.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4GeomSplitter.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Isotope.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IsotopeVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Log.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4LogicalVolume.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4LogicalVolume.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4LorentzVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Material.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialPropertiesTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialPropertiesTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialPropertyVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationHistory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationHistory.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationHistoryPool.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevel.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevel.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevelRep.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevelRep.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLogger.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Navigator.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Navigator.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NistElementBuilder.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NistManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NistMaterialBuilder.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Normal3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NormalNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NormalNavigation.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4OrderedTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PDefManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PVPlacement.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParameterisedNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParameterisedNavigation.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleChange.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleChange.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleDefinition.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleDefinition.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleMomentum.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleTableIterator.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsModelCatalog.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsOrderedFreeVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsVectorType.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Point3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Polyhedron.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Pow.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PrimaryParticle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PrimaryTransformer.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PrimaryVertex.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessManager.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessType.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ReferenceCountedHandle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Region.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Region.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4RegularNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ReplicaNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ReplicaNavigation.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4RotationMatrix.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4RunManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4RunManagerKernel.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SDManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SDStructure.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SandiaTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SensitiveVolumeList.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartTrackStack.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelHeader.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelHeader.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelNode.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelNode.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelProxy.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelProxy.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Sphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Sphere.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4StackManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4StackedTrack.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Step.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Step.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4StepPoint.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4StepPoint.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4StepStatus.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SteppingControl.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SteppingManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4String.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4String.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4SubtractionSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4THitsCollection.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Threading.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ThreeVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHandle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHistory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHistory.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHistoryHandle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Track.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Track.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackFastVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackStack.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackStatus.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackingManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UBox.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIcommand.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIdirectory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UImessenger.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIparameter.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4UserStackingAction.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UserSteppingAction.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UserTrackingAction.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VDigiCollection.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VHit.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VHitsCollection.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VMarker.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VMarker.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VPVParameterisation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VParticleChange.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VParticleChange.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VPhysicalVolume.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VPhysicalVolume.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VProcess.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VReadOutGeometry.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VSDFilter.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VSensitiveDetector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VSolid.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VSteppingVerbose.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VTouchable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VTouchable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VTrajectory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VUserEventInformation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VUserTrackInformation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VVisManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VVolumeMaterialScanner.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VisAttributes.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VisAttributes.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Visible.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Visible.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VoxelNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VoxelNavigation.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ios.hh
+ /opt/geant4.10.03.p03/include/Geant4/HepPolyhedron.h
+ /opt/geant4.10.03.p03/include/Geant4/Randomize.hh
+ /opt/geant4.10.03.p03/include/Geant4/evmandefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/evtdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/geomdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/geomwdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/globals.hh
+ /opt/geant4.10.03.p03/include/Geant4/pwdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/templates.hh
+ /opt/geant4.10.03.p03/include/Geant4/tls.hh
+ /opt/geant4.10.03.p03/include/Geant4/trajectoryControl.hh
+ /opt/geant4.10.03.p03/include/Geant4/trkdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/windefs.hh
+ include/Common.hh
+ include/CsI_array_spherical.hh
+ include/CsI_detector_spherical.hh
+ include/Flags.hh
+ include/Materials.hh
+ include/TrackerCsIHit.hh
+ include/TrackerCsISD.hh
+ include/TrackerIonHit.hh
+ include/TrackerIonSD.hh
 CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o
  /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_detector.cc
  /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/BasicVector3D.h
@@ -1432,6 +1738,284 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o
  /opt/geant4.10.03.p03/include/Geant4/trkdefs.hh
  /opt/geant4.10.03.p03/include/Geant4/windefs.hh
  include/CsI_detector.hh
+ include/Materials.hh
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o
+ /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_detector_spherical.cc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/BasicVector3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Normal3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Point3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Transform3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Transform3D.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Vector3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/DualRand.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/JamesRandom.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/MTwistEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/MixMaxRng.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBinomial.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBinomial.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBit.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBit.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBreitWigner.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandBreitWigner.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandChiSquare.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandChiSquare.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandExpZiggurat.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandExponential.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandExponential.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandFlat.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandFlat.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGamma.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGamma.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGauss.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGauss.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGaussQ.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGaussQ.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGaussZiggurat.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGeneral.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandGeneral.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandLandau.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandLandau.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandPoisson.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandPoisson.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandPoissonQ.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandPoissonQ.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandStudentT.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandStudentT.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/Random.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/Random.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandomEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RandomEngine.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/Randomize.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RanecuEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/Ranlux64Engine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RanluxEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/RanshiEngine.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Random/mixmax.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Units/PhysicalConstants.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Units/SystemOfUnits.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Utility/defs.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Utility/memory.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Utility/thread_local.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/AxisAngle.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/AxisAngle.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/LorentzVector.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/LorentzVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/Rotation.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/Rotation.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationInterfaces.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationInterfaces.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationX.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationX.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationY.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationY.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationZ.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationZ.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/ThreeVector.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/ThreeVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4AffineTransform.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AffineTransform.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Allocator.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AllocatorPool.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ApplicationState.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AutoLock.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AuxiliaryNavServices.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AuxiliaryNavServices.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4BlockingList.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4BlockingList.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4BooleanSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4BooleanSolid.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Box.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Box.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4CSGSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ClassificationOfNewTrack.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Color.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Colour.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DCofThisEvent.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DataVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DataVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4DisplacedSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DynamicParticle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DynamicParticle.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ElectronOccupancy.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Element.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ElementTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ElementVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Event.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4EventManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ExceptionSeverity.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Exp.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4FastVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ForceCondition.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4GPILSelection.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4GRSSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4GRSSolid.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4GRSVolume.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4GRSVolume.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4GeomSplitter.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Isotope.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IsotopeVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Log.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4LogicalVolume.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4LogicalVolume.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4LorentzVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Material.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialPropertiesTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialPropertiesTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialPropertyVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationHistory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationHistory.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationHistoryPool.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevel.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevel.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevelRep.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevelRep.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLogger.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Navigator.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Navigator.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NistElementBuilder.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NistManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NistMaterialBuilder.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Normal3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NormalNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NormalNavigation.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4OrderedTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PDefManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PVPlacement.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParameterisedNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParameterisedNavigation.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleChange.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleChange.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleDefinition.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleDefinition.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleMomentum.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleTableIterator.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsModelCatalog.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsOrderedFreeVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsVectorType.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Point3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Polyhedron.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Pow.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PrimaryParticle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PrimaryTransformer.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PrimaryVertex.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessManager.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessType.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ProcessVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ReferenceCountedHandle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Region.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Region.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4RegularNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ReplicaNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ReplicaNavigation.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4RotationMatrix.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4RunManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4RunManagerKernel.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SandiaTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartTrackStack.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelHeader.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelHeader.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelNode.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelNode.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelProxy.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SmartVoxelProxy.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Sphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Sphere.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4StackManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4StackedTrack.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Step.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Step.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4StepPoint.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4StepPoint.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4StepStatus.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SteppingControl.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SteppingManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4String.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4String.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4SubtractionSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Threading.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ThreeVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHandle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHistory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHistory.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHistoryHandle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Track.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Track.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackFastVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackStack.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackStatus.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackingManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UBox.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIcommand.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIdirectory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UImessenger.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIparameter.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4UserStackingAction.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UserSteppingAction.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UserTrackingAction.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VDigiCollection.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VHitsCollection.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VPVParameterisation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VParticleChange.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VParticleChange.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VPhysicalVolume.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VPhysicalVolume.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VProcess.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VSolid.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VSolid.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VSteppingVerbose.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VTouchable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VTouchable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VTrajectory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VUserEventInformation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VUserTrackInformation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VVolumeMaterialScanner.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VisAttributes.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VisAttributes.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Visible.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Visible.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VoxelNavigation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VoxelNavigation.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ios.hh
+ /opt/geant4.10.03.p03/include/Geant4/HepPolyhedron.h
+ /opt/geant4.10.03.p03/include/Geant4/Randomize.hh
+ /opt/geant4.10.03.p03/include/Geant4/evmandefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/evtdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/geomdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/geomwdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/globals.hh
+ /opt/geant4.10.03.p03/include/Geant4/pwdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/templates.hh
+ /opt/geant4.10.03.p03/include/Geant4/tls.hh
+ /opt/geant4.10.03.p03/include/Geant4/trajectoryControl.hh
+ /opt/geant4.10.03.p03/include/Geant4/trkdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/windefs.hh
+ include/CsI_detector_spherical.hh
  include/Materials.hh
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o
  /data1/achester/geant4/TIP_Coulex_RDM/src/DetectionSystemGriffin.cc
@@ -1758,7 +2342,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -1770,6 +2356,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o
  include/Plunger_Messenger.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -2098,7 +2685,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -2110,6 +2699,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o
  include/Plunger_Messenger.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -2236,6 +2826,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4GeomSplitter.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Isotope.hh
@@ -2349,6 +2940,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
@@ -2366,6 +2959,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -2424,7 +3018,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -2436,6 +3032,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o
  include/Plunger_Messenger.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -2565,6 +3162,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4GeometryManager.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Isotope.hh
@@ -2688,6 +3286,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TransportationManager.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TransportationManager.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
@@ -2705,6 +3305,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UniformMagField.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
@@ -2766,7 +3367,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -2778,6 +3381,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o
  include/Plunger_Messenger.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -2904,6 +3508,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4GeomSplitter.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Isotope.hh
@@ -3017,6 +3622,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
@@ -3034,6 +3641,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -3092,7 +3700,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/DetectorConstruction_Messenger.hh
@@ -3105,6 +3715,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o
  include/Plunger_Messenger.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -3298,6 +3909,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
  /opt/geant4.10.03.p03/include/Geant4/G4He3.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonConstructor.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXHandler.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXScalingICRU73.hh
@@ -3473,6 +4085,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryPoint.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Triton.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
@@ -3491,6 +4105,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -3674,7 +4289,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/EventAction.hh
@@ -3699,6 +4316,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o
  include/RunAction.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -3892,6 +4510,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
  /opt/geant4.10.03.p03/include/Geant4/G4He3.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonConstructor.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXHandler.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXScalingICRU73.hh
@@ -4067,6 +4686,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryPoint.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Triton.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
@@ -4085,6 +4706,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -4268,7 +4890,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/EventAction.hh
@@ -4294,6 +4918,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o
  include/RunAction.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -5205,6 +5830,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4GeomSplitter.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Isotope.hh
@@ -5318,6 +5944,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
@@ -5338,6 +5966,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -5396,7 +6025,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -5408,6 +6039,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o
  include/Plunger_Messenger.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -5642,6 +6274,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
  /opt/geant4.10.03.p03/include/Geant4/G4He3.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonConstructor.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXHandler.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXScalingICRU73.hh
@@ -5814,6 +6447,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Triton.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
@@ -5832,6 +6467,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -5922,7 +6558,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -5944,6 +6582,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o
  include/Recoil.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -6624,6 +7263,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4GeomSplitter.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonTable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
@@ -6741,6 +7381,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
@@ -6758,6 +7400,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -6818,7 +7461,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -6832,6 +7477,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o
  include/Projectile.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -7139,6 +7785,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonTable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
@@ -7257,6 +7904,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
@@ -7274,6 +7923,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -7334,7 +7984,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -7351,6 +8003,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o
  include/Recoil.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -7482,6 +8135,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonTable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
@@ -7600,6 +8254,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
@@ -7617,6 +8273,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -7677,7 +8334,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -7695,6 +8354,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o
  include/Recoil.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -8168,6 +8828,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonTable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
@@ -8286,6 +8947,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
@@ -8303,6 +8966,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -8452,7 +9116,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -8470,6 +9136,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o
  include/Results.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -8601,6 +9268,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonTable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
@@ -8719,6 +9387,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
@@ -8737,6 +9407,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -8886,7 +9557,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -8905,6 +9578,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o
  include/Results_Messenger.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -9098,6 +9772,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
  /opt/geant4.10.03.p03/include/Geant4/G4He3.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonConstructor.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXHandler.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXScalingICRU73.hh
@@ -9271,6 +9946,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Triton.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
@@ -9289,6 +9966,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -9469,7 +10147,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -9493,6 +10173,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o
  include/RunAction.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -9686,6 +10367,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
  /opt/geant4.10.03.p03/include/Geant4/G4He3.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonConstructor.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXHandler.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXScalingICRU73.hh
@@ -9858,6 +10540,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrackingMessenger.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Triton.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
@@ -9876,6 +10560,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -9966,7 +10651,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/Experimental_Hall.hh
@@ -9989,6 +10676,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o
  include/Run_Messenger.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -10182,6 +10870,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
  /opt/geant4.10.03.p03/include/Geant4/G4HadronicException.hh
  /opt/geant4.10.03.p03/include/Geant4/G4He3.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IntersectionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonConstructor.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXHandler.hh
  /opt/geant4.10.03.p03/include/Geant4/G4IonDEDXScalingICRU73.hh
@@ -10357,6 +11046,8 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4.10.03.p03/include/Geant4/G4TrajectoryPoint.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Trap.icc
  /opt/geant4.10.03.p03/include/Geant4/G4Triton.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4Tubs.icc
@@ -10375,6 +11066,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o
  /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4USphere.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UTrap.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UTubs.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnionSolid.hh
  /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
@@ -10558,7 +11250,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o
  include/Chamber_Messenger.hh
  include/Common.hh
  include/CsI_array.hh
+ include/CsI_array_spherical.hh
  include/CsI_detector.hh
+ include/CsI_detector_spherical.hh
  include/DetectionSystemGriffin.hh
  include/DetectorConstruction.hh
  include/EventAction.hh
@@ -10584,6 +11278,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o
  include/SteppingAction.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
  include/TrackerIonHit.hh
  include/TrackerIonSD.hh
  include/TrackerIonSD_Messenger.hh
@@ -10782,6 +11477,156 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o
  /opt/geant4.10.03.p03/include/Geant4/windefs.hh
  include/TrackerCsIHit.hh
  include/TrackerCsISD.hh
+CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o
+ /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerCsISD_Messenger.cc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/BasicVector3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Normal3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Point3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Transform3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Transform3D.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/Vector3D.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Units/PhysicalConstants.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Units/SystemOfUnits.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Utility/defs.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/AxisAngle.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/AxisAngle.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/LorentzVector.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/LorentzVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/Rotation.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/Rotation.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationInterfaces.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationInterfaces.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationX.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationX.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationY.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationY.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationZ.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/RotationZ.icc
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/ThreeVector.h
+ /opt/geant4.10.03.p03/include/Geant4/CLHEP/Vector/ThreeVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4AffineTransform.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AffineTransform.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Allocator.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AllocatorPool.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ApplicationState.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4AutoLock.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Circle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4CollectionNameVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Color.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Colour.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DataVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DataVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4DynamicParticle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4DynamicParticle.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ElectronOccupancy.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Element.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ElementTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ElementVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ExceptionSeverity.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Exp.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4GeomSplitter.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4HCofThisEvent.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4HCtable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IonisParamElm.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IonisParamMat.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Isotope.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4IsotopeVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Log.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4LogicalVolume.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4LogicalVolume.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4LorentzVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Material.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialPropertiesTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialPropertiesTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialPropertyVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4MaterialTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationHistory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationHistory.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationHistoryPool.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevel.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevel.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevelRep.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4NavigationLevelRep.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4OrderedTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PDefManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleDefinition.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleDefinition.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ParticleMomentum.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsModelCatalog.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsOrderedFreeVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsVector.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4PhysicsVectorType.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Point3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ReferenceCountedHandle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Region.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Region.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4RotationMatrix.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SDManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SDStructure.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SandiaTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SensitiveVolumeList.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Step.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Step.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4StepPoint.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4StepPoint.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4StepStatus.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4SteppingControl.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4String.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4String.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4THitsCollection.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Threading.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4ThreeVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHandle.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHistory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TouchableHistory.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Track.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Track.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackStatus.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4TrackVector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Transform3D.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Types.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIcmdWithADouble.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIcmdWithADoubleAndUnit.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIcmdWithAString.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIcmdWithAnInteger.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIcmdWithoutParameter.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIcommand.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIdirectory.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UImessenger.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UIparameter.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UItokenNum.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4UnitsTable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VHit.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VHitsCollection.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VMarker.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VMarker.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VPhysicalVolume.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VPhysicalVolume.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VReadOutGeometry.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VSDFilter.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VSensitiveDetector.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VTouchable.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VTouchable.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4VUserTrackInformation.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VVisManager.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VisAttributes.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4VisAttributes.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4Visible.hh
+ /opt/geant4.10.03.p03/include/Geant4/G4Visible.icc
+ /opt/geant4.10.03.p03/include/Geant4/G4ios.hh
+ /opt/geant4.10.03.p03/include/Geant4/geomdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/geomwdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/globals.hh
+ /opt/geant4.10.03.p03/include/Geant4/pwdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/templates.hh
+ /opt/geant4.10.03.p03/include/Geant4/tls.hh
+ /opt/geant4.10.03.p03/include/Geant4/trkdefs.hh
+ /opt/geant4.10.03.p03/include/Geant4/windefs.hh
+ include/TrackerCsIHit.hh
+ include/TrackerCsISD.hh
+ include/TrackerCsISD_Messenger.hh
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o
  /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerIonHit.cc
  /opt/geant4.10.03.p03/include/Geant4/CLHEP/Geometry/BasicVector3D.h

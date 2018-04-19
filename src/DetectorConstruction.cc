@@ -28,6 +28,7 @@ DetectorConstruction::DetectorConstruction()
   // Shield Selection Default
 
   useTigressPositions = true;
+  useCsIball=false;
 
   detectorShieldSelect = 1 ; // Include suppressors by default. 
   extensionSuppressorLocation = 0 ; // Back by default (Detector Forward)
@@ -77,10 +78,19 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
    thePlunger->Report();
    PlungerMessenger = new Plunger_Messenger(thePlunger);
 
-   aCsI_array = new CsI_array(ExpHall_log,materials);
-   aCsI_array->Construct();
-   aCsI_array->Report();
-  
+   	if(useCsIball)
+		{
+			aCsI_ball = new CsI_array_spherical(ExpHall_log,materials);
+			aCsI_ball->Construct();
+			aCsI_ball->Report();
+		}
+	else
+		{
+			aCsI_wall = new CsI_array(ExpHall_log,materials);
+			aCsI_wall->Construct();
+			aCsI_wall->Report();
+		}
+ 
   //------------------------------------------------ 
   // Sensitive detectors
   //------------------------------------------------ 
@@ -100,7 +110,12 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
    TrackerCsI = new TrackerCsISD("CsITracker");
    SDman->AddNewDetector( TrackerCsI );
-   aCsI_array->MakeSensitive(TrackerCsI);
+   
+   	if(useCsIball)
+		aCsI_ball->MakeSensitive(TrackerCsI);
+	else
+		aCsI_wall->MakeSensitive(TrackerCsI);
+
  
    return ExpHall_phys;
 }
@@ -414,8 +429,18 @@ void DetectorConstruction::SetPosZ_TIP(G4double z)
   // preserve shifts wrt to chamber over translation
   thePlunger->SetPosZ( thePlunger->GetPosZ() + z );
 
-  // CsI array downstream of origin
-  aCsI_array->SetPosZ( aCsI_array->GetPosZ() + z );
+  //shift the CsI array
+	if(useCsIball)
+		{
+			aCsI_ball->SetZPos(aCsI_ball->GetZPos() + z);
+			aCsI_ball->MakeSensitive(TrackerCsI);
+		}
+	else
+		{
+			aCsI_wall->SetZPos(aCsI_wall->GetZPos() + z);
+			aCsI_wall->MakeSensitive(TrackerCsI);
+		}
+
   
   G4RunManager::GetRunManager()->GeometryHasBeenModified();
  }
@@ -436,7 +461,7 @@ void DetectorConstruction::Report()
   thePlunger->Report();
   G4cout<<"CsI array Report"<<G4endl;
   G4cout<<"-----------------"<<G4endl;
-  aCsI_array->Report();
+  aCsI_wall->Report();
   G4cout<<"Chamber Report"<<G4endl;
   G4cout<<"-----------------"<<G4endl;
   theChamber->Report();

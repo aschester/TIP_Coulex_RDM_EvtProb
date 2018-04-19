@@ -14,7 +14,9 @@
 #define XAMU    931.494061    // atomic mass unit in MeV/c^2 
 
 // detector construction
-#define GN     16 // HPGe detectors
-#define GS      4 // crystals/HPGe
-#define NCsI   24 // number of CsI
+#define GN       16 // HPGe detectors
+#define GS        4 // crystals/HPGe
+#define NCsI     24 // CsI wall
+#define NCsISph 128 // CsI ball
+//#define NCsISph 38 // CsI partial ball
 

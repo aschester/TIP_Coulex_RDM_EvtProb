@@ -153,9 +153,33 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array.cc.o.provides: CMakeFiles/TIP_Coulex
 CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array.cc.o.provides.build: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array.cc.o
 
 
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o: src/CsI_array_spherical.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_array_spherical.cc
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_array_spherical.cc > CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.i
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_array_spherical.cc -o CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.s
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o.requires:
+
+.PHONY : CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o.requires
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o.provides: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o.requires
+	$(MAKE) -f CMakeFiles/TIP_Coulex_RDM.dir/build.make CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o.provides.build
+.PHONY : CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o.provides
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o.provides.build: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o
+
+
 CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o: src/CsI_detector.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_detector.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.i: cmake_force
@@ -177,9 +201,33 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o.provides: CMakeFiles/TIP_Cou
 CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o.provides.build: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o
 
 
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o: src/CsI_detector_spherical.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_detector_spherical.cc
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_detector_spherical.cc > CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.i
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data1/achester/geant4/TIP_Coulex_RDM/src/CsI_detector_spherical.cc -o CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.s
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o.requires:
+
+.PHONY : CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o.requires
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o.provides: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o.requires
+	$(MAKE) -f CMakeFiles/TIP_Coulex_RDM.dir/build.make CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o.provides.build
+.PHONY : CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o.provides
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o.provides.build: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o
+
+
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o: src/DetectionSystemGriffin.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/DetectionSystemGriffin.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.i: cmake_force
@@ -203,7 +251,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o.provides.build: CM
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o: src/DetectionSystemGriffinSuppressed.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/DetectionSystemGriffinSuppressed.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.i: cmake_force
@@ -227,7 +275,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o.provides
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o: src/DetectorConstruction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/DetectorConstruction.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.i: cmake_force
@@ -251,7 +299,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o.provides.build: CMak
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o: src/DetectorConstructionSuppressed.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/DetectorConstructionSuppressed.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.i: cmake_force
@@ -275,7 +323,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstructionSuppressed.cc.o.provides.b
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o: src/DetectorConstruction_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/DetectorConstruction_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.i: cmake_force
@@ -299,7 +347,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction_Messenger.cc.o.provides.b
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o: src/EventAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/EventAction.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.i: cmake_force
@@ -323,7 +371,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction.cc.o.provides.build: CMakeFiles/TI
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o: src/EventAction_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/EventAction_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.i: cmake_force
@@ -347,7 +395,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/EventAction_Messenger.cc.o.provides.build: CMa
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall.cc.o: src/Experimental_Hall.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Experimental_Hall.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall.cc.i: cmake_force
@@ -371,7 +419,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall.cc.o.provides.build: CMakeFi
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall_Messenger.cc.o: src/Experimental_Hall_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Experimental_Hall_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall_Messenger.cc.i: cmake_force
@@ -395,7 +443,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Experimental_Hall_Messenger.cc.o.provides.buil
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4BetaFermiFunction.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4BetaFermiFunction.cc.o: src/G4BetaFermiFunction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/G4BetaFermiFunction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/G4BetaFermiFunction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/G4BetaFermiFunction.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/G4BetaFermiFunction.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4BetaFermiFunction.cc.i: cmake_force
@@ -419,7 +467,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/G4BetaFermiFunction.cc.o.provides.build: CMake
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4Decay.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4Decay.cc.o: src/G4Decay.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/G4Decay.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/G4Decay.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/G4Decay.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/G4Decay.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4Decay.cc.i: cmake_force
@@ -443,7 +491,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/G4Decay.cc.o.provides.build: CMakeFiles/TIP_Co
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonParametrisedLossModel.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonParametrisedLossModel.cc.o: src/G4IonParametrisedLossModel.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonParametrisedLossModel.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonParametrisedLossModel.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonParametrisedLossModel.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/G4IonParametrisedLossModel.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonParametrisedLossModel.cc.i: cmake_force
@@ -467,7 +515,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonParametrisedLossModel.cc.o.provides.build
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonStoppingData.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonStoppingData.cc.o: src/G4IonStoppingData.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonStoppingData.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonStoppingData.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonStoppingData.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/G4IonStoppingData.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonStoppingData.cc.i: cmake_force
@@ -491,7 +539,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/G4IonStoppingData.cc.o.provides.build: CMakeFi
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/GammaDecayChannel.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/GammaDecayChannel.cc.o: src/GammaDecayChannel.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/GammaDecayChannel.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/GammaDecayChannel.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/GammaDecayChannel.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/GammaDecayChannel.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/GammaDecayChannel.cc.i: cmake_force
@@ -515,7 +563,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/GammaDecayChannel.cc.o.provides.build: CMakeFi
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o: src/GriffinMessenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/GriffinMessenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.i: cmake_force
@@ -539,7 +587,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/GriffinMessenger.cc.o.provides.build: CMakeFil
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Materials.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Materials.cc.o: src/Materials.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Materials.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Materials.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Materials.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Materials.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Materials.cc.i: cmake_force
@@ -563,7 +611,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Materials.cc.o.provides.build: CMakeFiles/TIP_
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o: src/PhysicsList.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/PhysicsList.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.i: cmake_force
@@ -587,7 +635,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PhysicsList.cc.o.provides.build: CMakeFiles/TI
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger.cc.o: src/Plunger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Plunger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger.cc.i: cmake_force
@@ -611,7 +659,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger.cc.o.provides.build: CMakeFiles/TIP_Co
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger_Messenger.cc.o: src/Plunger_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Plunger_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger_Messenger.cc.i: cmake_force
@@ -635,7 +683,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Plunger_Messenger.cc.o.provides.build: CMakeFi
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o: src/PrimaryGeneratorAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/PrimaryGeneratorAction.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
@@ -659,7 +707,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/PrimaryGeneratorAction.cc.o.provides.build: CM
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile.cc.o: src/Projectile.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Projectile.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile.cc.i: cmake_force
@@ -683,7 +731,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile.cc.o.provides.build: CMakeFiles/TIP
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile_Messenger.cc.o: src/Projectile_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Projectile_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile_Messenger.cc.i: cmake_force
@@ -707,7 +755,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Projectile_Messenger.cc.o.provides.build: CMak
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o: src/Reaction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Reaction.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.i: cmake_force
@@ -731,7 +779,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction.cc.o.provides.build: CMakeFiles/TIP_C
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o: src/Reaction_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Reaction_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.i: cmake_force
@@ -755,7 +803,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Reaction_Messenger.cc.o.provides.build: CMakeF
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil.cc.o: src/Recoil.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Recoil.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil.cc.i: cmake_force
@@ -779,7 +827,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil.cc.o.provides.build: CMakeFiles/TIP_Cou
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil_Messenger.cc.o: src/Recoil_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Recoil_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil_Messenger.cc.i: cmake_force
@@ -803,7 +851,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Recoil_Messenger.cc.o.provides.build: CMakeFil
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o: src/Results.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Results.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.i: cmake_force
@@ -827,7 +875,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results.cc.o.provides.build: CMakeFiles/TIP_Co
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o: src/Results_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Results_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.i: cmake_force
@@ -851,7 +899,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Results_Messenger.cc.o.provides.build: CMakeFi
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o: src/RunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/RunAction.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.i: cmake_force
@@ -875,7 +923,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/RunAction.cc.o.provides.build: CMakeFiles/TIP_
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o: src/Run_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/Run_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.i: cmake_force
@@ -899,7 +947,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o.provides.build: CMakeFiles/
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o: src/SteppingAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/SteppingAction.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.i: cmake_force
@@ -923,7 +971,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o.provides.build: CMakeFiles
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.o: src/TrackerCsIHit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerCsIHit.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.i: cmake_force
@@ -947,7 +995,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.o.provides.build: CMakeFiles/
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o: src/TrackerCsISD.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerCsISD.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.i: cmake_force
@@ -969,9 +1017,33 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o.provides: CMakeFiles/TIP_Cou
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o.provides.build: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o
 
 
+CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
+CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o: src/TrackerCsISD_Messenger.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerCsISD_Messenger.cc
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerCsISD_Messenger.cc > CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.i
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerCsISD_Messenger.cc -o CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.s
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o.requires:
+
+.PHONY : CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o.requires
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o.provides: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o.requires
+	$(MAKE) -f CMakeFiles/TIP_Coulex_RDM.dir/build.make CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o.provides.build
+.PHONY : CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o.provides
+
+CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o.provides.build: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o
+
+
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o: src/TrackerIonHit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerIonHit.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.i: cmake_force
@@ -995,7 +1067,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o.provides.build: CMakeFiles/
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.o: src/TrackerIonSD.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerIonSD.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.i: cmake_force
@@ -1019,7 +1091,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.o.provides.build: CMakeFiles/T
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.o: src/TrackerIonSD_Messenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/TrackerIonSD_Messenger.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.i: cmake_force
@@ -1043,7 +1115,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.o.provides.build: CM
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/VisManager.cc.o: CMakeFiles/TIP_Coulex_RDM.dir/flags.make
 CMakeFiles/TIP_Coulex_RDM.dir/src/VisManager.cc.o: src/VisManager.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/VisManager.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/TIP_Coulex_RDM.dir/src/VisManager.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIP_Coulex_RDM.dir/src/VisManager.cc.o -c /data1/achester/geant4/TIP_Coulex_RDM/src/VisManager.cc
 
 CMakeFiles/TIP_Coulex_RDM.dir/src/VisManager.cc.i: cmake_force
@@ -1071,7 +1143,9 @@ TIP_Coulex_RDM_OBJECTS = \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/Chamber.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/Chamber_Messenger.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array.cc.o" \
+"CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o" \
+"CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o" \
@@ -1105,6 +1179,7 @@ TIP_Coulex_RDM_OBJECTS = \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o" \
+"CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.o" \
 "CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.o" \
@@ -1117,7 +1192,9 @@ TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/TIP_Coulex_RDM.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/Chamber.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/Chamber_Messenger.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array.cc.o
+TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o
+TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o
@@ -1151,6 +1228,7 @@ TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Messenger.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o
+TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.o
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.o
@@ -1202,7 +1280,7 @@ TIP_Coulex_RDM: /opt/geant4.10.03.p03/lib64/libG4intercoms.so
 TIP_Coulex_RDM: /opt/geant4.10.03.p03/lib64/libG4global.so
 TIP_Coulex_RDM: /opt/geant4.10.03.p03/lib64/libG4clhep.so
 TIP_Coulex_RDM: CMakeFiles/TIP_Coulex_RDM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking CXX executable TIP_Coulex_RDM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/data1/achester/geant4/TIP_Coulex_RDM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Linking CXX executable TIP_Coulex_RDM"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TIP_Coulex_RDM.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1214,7 +1292,9 @@ CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/TIP_Coulex
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/Chamber.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/Chamber_Messenger.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array.cc.o.requires
+CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_array_spherical.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector.cc.o.requires
+CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/CsI_detector_spherical.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffin.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/DetectionSystemGriffinSuppressed.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/DetectorConstruction.cc.o.requires
@@ -1248,6 +1328,7 @@ CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/Run_Me
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/SteppingAction.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsIHit.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD.cc.o.requires
+CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerCsISD_Messenger.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonHit.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD.cc.o.requires
 CMakeFiles/TIP_Coulex_RDM.dir/requires: CMakeFiles/TIP_Coulex_RDM.dir/src/TrackerIonSD_Messenger.cc.o.requires

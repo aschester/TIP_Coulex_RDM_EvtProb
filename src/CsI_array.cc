@@ -128,7 +128,7 @@ void CsI_array::MakeSensitive(TrackerCsISD* TrackerCsI)
  }
 
 //-----------------------------------------------------------------------------
-void CsI_array::SetPosZ(G4double z)
+void CsI_array::SetZPos(G4double z)
 {
   vector<CsI_detector*>::iterator itPos = aCsI_array.begin();
   G4int i;

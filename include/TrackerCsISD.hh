@@ -23,17 +23,25 @@ class G4HCofThisEvent;
 
 class TrackerCsISD : public G4VSensitiveDetector
 {
-  public:
-      TrackerCsISD(G4String);
-     ~TrackerCsISD();
-
-      void Initialize(G4HCofThisEvent*);
-      G4bool ProcessHits(G4Step*, G4TouchableHistory*);
-      void EndOfEvent(G4HCofThisEvent*);
-
-  private:
-      TrackerCsIHitsCollection* CsICollection;
-
+public:
+  TrackerCsISD(G4String);
+  ~TrackerCsISD();
+  
+  void SetPrint(){
+    G4cout<<"----> CsI track data set to print at the end of event"<<G4endl;
+    print=true;}
+  void UnSetPrint(){
+    G4cout<<"----> CsI track data set not to print at the end of event"<<G4endl;
+    print=false;}
+  
+  void Initialize(G4HCofThisEvent*);
+  G4bool ProcessHits(G4Step*, G4TouchableHistory*);
+  void EndOfEvent(G4HCofThisEvent*);
+  
+private:
+  TrackerCsIHitsCollection* CsICollection;
+  G4bool print;
+  
 };
 
 

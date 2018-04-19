@@ -28,8 +28,10 @@ public:
   void     Construct();
   void     Report();
   void     MakeSensitive(TrackerCsISD*);
-  void     SetPosZ(G4double z);
-  G4double GetPosZ(){return zpos;};
+  void     SetZPos(G4double z);
+  G4double GetZPos(){return zpos;};
+  G4double GetXPos(G4int id){return pos[id-1].getX();}; //detector position = id-1
+  G4double GetYPos(G4int id){return pos[id-1].getY();};
   void     SetBirksConstant(G4int id,G4double k){kB[id-1]=k;};     // set kB by position = id-1
   G4double GetBirksConstant(G4int id){return kB[id];};             // read kB by index id
   G4double SetLYScaling(G4int id,G4double s){return S[id-1]=s;};   // set S by position = id-1

@@ -63,7 +63,7 @@ typedef struct{
     Double_t b;
     Double_t w;
     Double_t path; // path length in material in mg/cm^2
-    Double_t LY;   // Birks Law light yield. LY = sum over dL
+    //Double_t LY;   // Birks Law light yield. LY = sum over dL
     Int_t    Id;
     Int_t    ring;
     Int_t    fold;
@@ -119,22 +119,24 @@ public:
   void GammaABRingSpectrum(G4int);
   void CsIRingEnergySpectrum(G4int);
   void CsIDetectorEnergySpectrum(G4int);
-  void CsIRingLYSpectrum(G4int);
-  void CsIDetectorLYSpectrum(G4int);
+  //void CsIRingLYSpectrum(G4int);
+  //void CsIDetectorLYSpectrum(G4int);
   void CsIFold();
   void DetCryCsIGammaSpectrum(G4int,G4int,G4int);
   void DetRingCsIRingGammaSpectrum(G4int,G4int,G4double);
   G4int RingMap(G4int,G4int);
   void ReportCrystalPositions();
-  void ReportCsIPositions();
+  void ReportCsIWallPositions();
   void CalculateCrystalPositions();
-  void CalculateCsIPositions();
+  void CalculateCsIWallPositions();
+  void GetCsIWallPositions();
+  void GetCsIBallPositions();
   void GroupCosDist();  
   void SetFWHM_response(G4double,G4double,G4double);
   G4double FWHM_response(G4double);
   G4double CalculatePath(G4ThreeVector,G4ThreeVector);
-  void     SetCsILYResponse(G4int,G4double,G4double);
-  G4double CalculateBirksLawStep(G4int,G4double,G4double);
+  //void     SetCsILYResponse(G4int,G4double,G4double);
+  //G4double CalculateBirksLawStep(G4int,G4double,G4double);
   G4double CalculateTheta(G4ThreeVector,G4ThreeVector);
   G4double CalculateDistCloseApproach(G4double,G4double);
   G4double CalculateDopplerFactor(IonInf,G4double,G4double,G4double);
@@ -161,9 +163,9 @@ private:
   G4double      dDensity;     // degrader density for calculating path in mg/cm^2
   G4double      CsIDensity;   // CsI density for calculating path in mg/cm^2
 
-  G4double kB[NCsI];  // Birks constant in um/MeV
-  G4double kBm[NCsI]; // Birks constant in (mg/cm^2)/MeV
-  G4double S[NCsI];   // scaling factor to convert LY to channels
+  //G4double kB[NCsI];  // Birks constant in um/MeV
+  //G4double kBm[NCsI]; // Birks constant in (mg/cm^2)/MeV
+  //G4double S[NCsI];   // scaling factor to convert LY to channels
 
   G4ThreeVector p1,p2,pCM; // momentum vectors for calculating CM angles
 
@@ -175,7 +177,7 @@ private:
   G4double TargetFaceCrossSection;
  
   G4ThreeVector CP[GN][GS];
-  G4ThreeVector PP[NCsI];
+  G4ThreeVector PP[NCsISph];
 
   G4double A,B,C,F,G,H;
 

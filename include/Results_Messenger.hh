@@ -57,10 +57,10 @@ private:
   // CsI
   G4UIcmdWithAnInteger*      PRESCmd;
   G4UIcmdWithAnInteger*      PDESCmd;
-  G4UIcmdWithAnInteger*      PRLYSCmd;
-  G4UIcmdWithAnInteger*      PDLYSCmd;
+  //G4UIcmdWithAnInteger*      PRLYSCmd;
+  //G4UIcmdWithAnInteger*      PDLYSCmd;
   G4UIcmdWithoutParameter*   PRFCmd;
-  G4UIcmdWith3Vector*        SLYCmd;
+  //G4UIcmdWith3Vector*        SLYCmd;
   
   // groups
   G4UIcmdWithoutParameter*   RCSPCmd;
