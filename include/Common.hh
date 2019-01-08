@@ -11,7 +11,7 @@
 
 // physical constants
 #define AHC     1.439964535    // fine struct const*hbar*c in MeV*fm
-#define XAMU    931.494061    // atomic mass unit in MeV/c^2 
+#define XAMU    931.4940954    // atomic mass unit in MeV/c^2 
 
 // detector construction
 #define GN       16 // HPGe detectors

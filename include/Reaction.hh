@@ -29,77 +29,81 @@ using namespace std;
 
 class Reaction : public G4VProcess 
 {
-  public:     
-   G4bool reaction_here;
-
+public:     
+  G4bool reaction_here;
+  
   Reaction(Projectile*,Recoil*, const G4String& processName ="Reaction" );
 
-     virtual ~Reaction();
+  virtual ~Reaction();
 
  
  
-    virtual G4double PostStepGetPhysicalInteractionLength(
-                             const G4Track& track,
-			     G4double   previousStepSize,
-			     G4ForceCondition* condition
-			    );
+  virtual G4double PostStepGetPhysicalInteractionLength(
+							const G4Track& track,
+							G4double   previousStepSize,
+							G4ForceCondition* condition
+							);
 
-     virtual G4VParticleChange* PostStepDoIt(
-			     const G4Track& ,
-			     const G4Step& 
-			    );
+  virtual G4VParticleChange* PostStepDoIt(
+					  const G4Track& ,
+					  const G4Step& 
+					  );
 			    
-     //  no operation in  AtRestGPIL
-     virtual G4double AtRestGetPhysicalInteractionLength(
-                             const G4Track& ,
-			     G4ForceCondition* 
-			    ){ return -1.0; };
+  //  no operation in  AtRestGPIL
+  virtual G4double AtRestGetPhysicalInteractionLength(
+						      const G4Track& ,
+						      G4ForceCondition* 
+						      ){ return -1.0; };
 			    
-     //  no operation in  AtRestDoIt      
-     virtual G4VParticleChange* AtRestDoIt(
-			     const G4Track& ,
-			     const G4Step&
-			    ){return NULL;};
+  //  no operation in  AtRestDoIt      
+  virtual G4VParticleChange* AtRestDoIt(
+					const G4Track& ,
+					const G4Step&
+					){return NULL;};
 
-     //  no operation in  AlongStepGPIL
-     virtual G4double AlongStepGetPhysicalInteractionLength(
-                             const G4Track&,
-			     G4double  ,
-			     G4double  ,
-			     G4double& ,
-                             G4GPILSelection*
-			    ){ return -1.0; };
+  //  no operation in  AlongStepGPIL
+  virtual G4double AlongStepGetPhysicalInteractionLength(
+							 const G4Track&,
+							 G4double  ,
+							 G4double  ,
+							 G4double& ,
+							 G4GPILSelection*
+							 ){ return -1.0; };
 
-     //  no operation in  AlongStepDoIt
-     virtual G4VParticleChange* AlongStepDoIt(
-			     const G4Track& ,
-			     const G4Step& 
-			    ) {return NULL;};
+  //  no operation in  AlongStepDoIt
+  virtual G4VParticleChange* AlongStepDoIt(
+					   const G4Track& ,
+					   const G4Step& 
+					   ) {return NULL;};
 
-  void TargetFaceCrossSection();
-  G4int  getTargetRecoilA(){return A2;};
-  G4int  getTargetRecoilZ(){return Z2;};
+  void     TargetFaceCrossSection();
+  G4int    getTargetRecoilA(){return A2;};
+  G4int    getTargetRecoilZ(){return Z2;};
   G4double GetTargetFaceCrossSection(){return sigmaFace;};// in barns
-  G4double GetThickTargetCorrection(){return sumWeights/sumProj;};
-  G4double GetThickTargetCrossSection(){return sumWeights/sumProj*sigmaFace;};// in barns
+  G4double GetThickTargetCorrection(){return sumWeights/(sumProj+dropRand);};
+  G4double GetThickTargetCrossSection(){return sumWeights/(sumProj+dropRand)*sigmaFace;};// in barns
   G4int    GetNumberOfSimulatedReactions(){return sumProj;};
-  void ReportDCmin(){printf("Minimum istnace of closest approach = %.2f fm\n",dcmin);};
-  void SetDCmin(G4double d){dcmin=d;};
+  G4int    GetRxnDroppedE(){return dropE;};
+  G4int    GetRxnDroppedKsi(){return dropKsi;};
+  G4int    GetRxnDroppedRand(){return dropRand;};
+  void     ReportDCmin(){printf("Minimum istnace of closest approach = %.2f fm\n",dcmin);};
+  void     SetDCmin(G4double d){dcmin = d;};
   
-  private:
+private:
   
   // hide assignment operator as private 
   Reaction& operator=(const Reaction&){return *this;};
 
-  Recoil* theRecoil;
+  Recoil     *theRecoil;
   Projectile *theProjectile;
  
-  void Calcfthksi(double,vector<G4double>*);
-  void SetupLookupGenerator();
+  G4int    Calcfthksi(double,vector<G4double>*);
+  void     SetupLookupGenerator(G4double fksi);
   G4double GetTheta();
   G4double FineThetaFunction(G4double,G4double,G4double,G4double,G4double,G4double,G4double);
-  G4bool SetupReactionProducts(const G4Track &,G4DynamicParticle*,G4DynamicParticle*);
+  G4bool   SetupReactionProducts(const G4Track &,G4DynamicParticle*,G4DynamicParticle*);
   G4double GetKsi(G4double);
+  G4double GetfKsi(G4double);
   G4double dfdOmega(G4double,G4double);
   G4double dfofTheta(G4double,vector<G4double>*);
  
@@ -107,6 +111,7 @@ class Reaction : public G4VProcess
   G4int ReactionFlag;
 
   vector<G4double> ksiArray;
+  vector<G4double> fksiArray;
   vector<G4double> thetaArray;
   vector<G4double> th000;
   vector<G4double> th010;
@@ -136,11 +141,13 @@ class Reaction : public G4VProcess
   G4double sigmaFace;
   G4double sumWeights;
   G4int    sumProj;
+  G4int    dropRand,dropE,dropKsi;
   G4double ksiFace;
   G4double EprimeFace;
   G4double A1,Z1,A2,Z2;
-  G4bool ProjEx;
+  G4bool   ProjEx;
   G4double Ex1,Ex2;
+  G4double BE2;
   G4double DE,DEp;
 
   G4Decay *decay; // standard decy

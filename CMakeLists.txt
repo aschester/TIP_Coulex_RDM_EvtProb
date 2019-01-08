@@ -3,7 +3,7 @@
 #----------------------------------------------------------------------------
 # Setup the project
 cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-project(TIP_Coulex_RDM)
+project(TIP_Coulex_RDM_EvtProb)
 
 #----------------------------------------------------------------------------
 # Find Geant4 package, activating all available UI and Vis drivers by default
@@ -43,20 +43,20 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 and ROOT libraries
 #
-add_executable(TIP_Coulex_RDM TIP_Coulex_RDM.cc ${sources} ${headers})
-target_link_libraries(TIP_Coulex_RDM ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
+add_executable(TIP_Coulex_RDM_EvtProb TIP_Coulex_RDM_EvtProb.cc ${sources} ${headers})
+target_link_libraries(TIP_Coulex_RDM_EvtProb ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
-# build TIP_Coulex_RDM
+# build TIP_Coulex_RDM_EvtProb
 #
-set(TIPCOULRDM_SCRIPTS
+set(TIPCOULRDM_EvtProb_SCRIPTS
   94Sr_Al_target_Cu_stopper.mac
   gui/vis.mac
   gui/gui.mac
   )
 
-foreach(_script ${TIPCOULRDM_SCRIPTS})
+foreach(_script ${TIPCOULRDM_EvtProb_SCRIPTS})
   configure_file(
     ${PROJECT_SOURCE_DIR}/${_script}
     ${PROJECT_BINARY_DIR}/${_script}
@@ -73,6 +73,6 @@ endforeach()
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
-install(TARGETS TIP_Coulex_RDM DESTINATION bin)
+install(TARGETS TIP_Coulex_RDM_EvtProb DESTINATION bin)
 
 

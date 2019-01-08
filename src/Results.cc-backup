@@ -6,7 +6,7 @@ Results::Results(Projectile* proj,Recoil* rec,DetectorConstruction* det):theProj
   g=NULL;  
   c=NULL;
   //TreeCreate();  
-  // IonFill=0;
+  IonFill=0;
   soh=sizeof(rHit);
   sogh=sizeof(GHit);
   soi=sizeof(gun);
@@ -45,15 +45,15 @@ void Results::SetupRun()
   Ar=theRecoil->getA();
   Zr=theRecoil->getZ();
   
-  // dDensity=theDetector->GetPlunger()->GetStopperDensity();
+  dDensity=theDetector->GetPlunger()->GetStopperDensity();
   
   if (theDetector->usingCsIBall()) {
     GetCsIBallPositions();
-    // CsIDensity=theDetector->GetCsIBall()->GetCsIDetector()->GetCsIDensity();
+    CsIDensity=theDetector->GetCsIBall()->GetCsIDetector()->GetCsIDensity();
   }
   else {
     GetCsIWallPositions();    
-    // CsIDensity=theDetector->GetCsIWall()->GetCsIDetector()->GetCsIDensity();
+    CsIDensity=theDetector->GetCsIWall()->GetCsIDetector()->GetCsIDensity();
     // printf("stopper density is %9.3f g/cm^3\n",dDensity);
     // printf("CsI density is     %9.3f g/cm^3\n",CsIDensity);
     // getc(stdin);
@@ -76,7 +76,8 @@ void Results::SetupRun()
 //---------------------------------------------------------
 void Results::TreeCreate()
 {
- if(tree==NULL) {
+ if(tree==NULL)
+    {
       tree=new TTree("tree","tree");
 
       // gamma info
@@ -100,27 +101,28 @@ void Results::TreeCreate()
       // can include path and eloss for any IonInf but they are all == 0
       // tree->Branch("pHit",&pHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:LY/D:Id/I:ring/I:fold/I");
       // tree->Branch("rHit",&rHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:LY/D:Id/I:ring/I:fold/I");
-      tree->Branch("pHit",&pHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D::Id/I:ring/I:fold/I");
-      tree->Branch("rHit",&rHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D::Id/I:ring/I:fold/I");
-      tree->Branch("projGun",&gun,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("projBackingIn",&pBIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("projTargetIn",&pTIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("projReactionIn",&pRIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("projReactionOut",&pROut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("projTargetOut",&pTOut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("projDegraderIn",&pDIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("projDegraderOut",&pDOut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("projDec",&pDec,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");      
-      tree->Branch("recReactionOut",&rROut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("recTargetOut",&rTOut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("recDegraderIn",&rDIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("recDegraderOut",&rDOut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      // tree->Branch("recDegraderTrack",&rDTrack,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
-      tree->Branch("recDec",&rDec,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:df/D:t/D");
+      tree->Branch("pHit",&pHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Id/I:ring/I:fold/I");
+      tree->Branch("rHit",&rHit,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Id/I:ring/I:fold/I");
+      tree->Branch("projGun",&gun,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("projBackingIn",&pBIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("projTargetIn",&pTIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("projReactionIn",&pRIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("projReactionOut",&pROut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("projTargetOut",&pTOut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("projDegraderIn",&pDIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("projDegraderOut",&pDOut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("projDec",&pDec,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");      
+      tree->Branch("recReactionOut",&rROut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("recTargetOut",&rTOut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("recDegraderIn",&rDIn,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("recDegraderOut",&rDOut,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("recDegraderTrack",&rDTrack,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
+      tree->Branch("recDec",&rDec,"x/D:y/D:z/D:px/D:py/D:pz/D:E/D:b/D:w/D:path/D:Eloss/D:df/D:t/D");
 
       // reaction info
       tree->Branch("reactionInfo",&react,"tpL/D:tpCM/D:trL/D:trCM/D:dc/D");
-   }   
+   }
+   
    else {
     printf("Tree not deleted, could not create new tree!\n");
     getc(stdin);
@@ -178,7 +180,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
  memset(&rDIn,0,soi);
  memset(&rDOut,0,soi);
  memset(&rDec,0,soi);
- // memset(&rDTrack,0,soi);
+ memset(&rDTrack,0,soi);
  memset(&react,0,sor);
 
  // for(G4int i=0;i<NCsI;i++)
@@ -316,28 +318,28 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		 rDIn.w=(*IonCollection)[i]->GetWeight();
 		 rDIn.t=(*IonCollection)[i]->GetTime()/ns;
 		 rDiPos.set(rDIn.x,rDIn.y,rDIn.z); // set initial position when the recoil enters the degrader
-		 // rDTrack.Eloss=rDIn.E;             // assume all energy lost in degrader
+		 rDTrack.Eloss=rDIn.E;             // assume all energy lost in degrader
 	       }
 	   break;
-	 // case DEGRADER_TRACK_FLAG:
-	 //   if((*IonCollection)[i]->GetA()==Ar)
-	 //     if((*IonCollection)[i]->GetZ()==Zr)
-	 //       {
-	 // 	 rDTrack.x=(*IonCollection)[i]->GetPos().getX()/mm;
-	 // 	 rDTrack.y=(*IonCollection)[i]->GetPos().getY()/mm;
-	 // 	 rDTrack.z=(*IonCollection)[i]->GetPos().getZ()/mm;
-	 // 	 rDTrack.px=(*IonCollection)[i]->GetMom().getX()/MeV;
-	 // 	 rDTrack.py=(*IonCollection)[i]->GetMom().getY()/MeV;
-	 // 	 rDTrack.pz=(*IonCollection)[i]->GetMom().getZ()/MeV;
-	 // 	 rDTrack.b=(*IonCollection)[i]->GetBeta();
-	 // 	 rDTrack.E=(*IonCollection)[i]->GetKE()/MeV;		 
-	 // 	 rDTrack.w=(*IonCollection)[i]->GetWeight();
-	 // 	 rDTrack.t=(*IonCollection)[i]->GetTime()/ns;
-	 // 	 rDPos.set(rDTrack.x,rDTrack.y,rDTrack.z);  // set current position when the recoil enters the degrader
-	 // 	 rDTrack.path+=CalculatePath(rDiPos,rDPos); // calculate the path step distance
-	 // 	 rDiPos=rDPos;                              // reset initial position
-	 //       }
-	 //   break;
+	 case DEGRADER_TRACK_FLAG:
+	   if((*IonCollection)[i]->GetA()==Ar)
+	     if((*IonCollection)[i]->GetZ()==Zr)
+	       {
+		 rDTrack.x=(*IonCollection)[i]->GetPos().getX()/mm;
+		 rDTrack.y=(*IonCollection)[i]->GetPos().getY()/mm;
+		 rDTrack.z=(*IonCollection)[i]->GetPos().getZ()/mm;
+		 rDTrack.px=(*IonCollection)[i]->GetMom().getX()/MeV;
+		 rDTrack.py=(*IonCollection)[i]->GetMom().getY()/MeV;
+		 rDTrack.pz=(*IonCollection)[i]->GetMom().getZ()/MeV;
+		 rDTrack.b=(*IonCollection)[i]->GetBeta();
+		 rDTrack.E=(*IonCollection)[i]->GetKE()/MeV;		 
+		 rDTrack.w=(*IonCollection)[i]->GetWeight();
+		 rDTrack.t=(*IonCollection)[i]->GetTime()/ns;
+		 rDPos.set(rDTrack.x,rDTrack.y,rDTrack.z);  // set current position when the recoil enters the degrader
+		 rDTrack.path+=CalculatePath(rDiPos,rDPos); // calculate the path step distance
+		 rDiPos=rDPos;                              // reset initial position
+	       }
+	   break;
 	 case DEGRADER_OUT_FLAG:
 	   if((*IonCollection)[i]->GetA()==Ap)
 	     if((*IonCollection)[i]->GetZ()==Zp)
@@ -367,8 +369,8 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		 rDOut.w=(*IonCollection)[i]->GetWeight();
 		 rDOut.t=(*IonCollection)[i]->GetTime()/ns;
 		 rDPos.set(rDOut.x,rDOut.y,rDOut.z);        // set current position when the recoil leaves the degrader
-		 // rDTrack.path+=CalculatePath(rDiPos,rDPos); // calculate the path step distance
-		 // rDTrack.Eloss-=rDOut.E;                    // subtract EOut if recoil leaves degrader
+		 rDTrack.path+=CalculatePath(rDiPos,rDPos); // calculate the path step distance
+		 rDTrack.Eloss-=rDOut.E;                    // subtract EOut if recoil leaves degrader
 	       }
 	   break;
 	 default:
@@ -485,7 +487,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
       }
     
      // convert paths to mg/cm^2 based on material
-     // rDTrack.path = (rDTrack.path/cm)*dDensity*1000.;
+     rDTrack.path = (rDTrack.path/cm)*dDensity*1000.;
      // printf("DEGRADER: EIn %9.3f [MeV]  path %9.3f [mg/cm^2]  energy loss %9.3f [MeV] EOut %9.3f [MeV] \n                               path %9.3f [um]                                   check %8.3f [MeV]\n",rDIn.E/MeV,rDTrack.path,rDTrack.Eloss/MeV,rDOut.E/MeV,(rDTrack.path/dDensity)*10,rDIn.E/MeV-rDTrack.Eloss/MeV);
      // getc(stdin);
    }      
@@ -538,7 +540,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		   // dEdx=((*CsICollection)[i]->GetEdep()/MeV)/((*CsICollection)[i]->GetPathLength()/um); 
 
 		   // in mg/cm^2
-		   // rHit.path=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
+		   rHit.path=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
 		   //dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
  
 		   //dL=CalculateBirksLawStep(rHit.Id,dE,dEdx); // make sure to check units of kB!
@@ -565,7 +567,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		       // dEdx=((*CsICollection)[i]->GetEdep()/MeV)/((*CsICollection)[i]->GetPathLength()/um);
 
 		       // in mg/cm^2
-		       // rHit.path+=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
+		       rHit.path+=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
 		       //dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
  
 		       //dL=CalculateBirksLawStep(rHit.Id,dE,dEdx); // make sure to check units of kB!
@@ -600,7 +602,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		   // dEdx=((*CsICollection)[i]->GetEdep()/MeV)/((*CsICollection)[i]->GetPathLength()/um); 
 
 		   // in mg/cm^2
-		   // pHit.path=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
+		   pHit.path=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
 		   //dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
  
 		   //dL=CalculateBirksLawStep(pHit.Id,dE,dEdx); // make sure to check units of kB!
@@ -620,7 +622,7 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
 		       // dEdx=((*CsICollection)[i]->GetEdep()/MeV)/((*CsICollection)[i]->GetPathLength()/um);
 		       
 		       // in mg/cm^2
-		       // pHit.path+=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
+		       pHit.path+=((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000; 
 		       //dEdx=((*CsICollection)[i]->GetEdep()/MeV)/(((*CsICollection)[i]->GetPathLength()/cm)*CsIDensity*1000);
  		       
 		       //dL=CalculateBirksLawStep(pHit.Id,dE,dEdx); // make sure to check units of kB!
@@ -696,14 +698,14 @@ void Results::FillTree(G4int evtNb, TrackerIonHitsCollection* IonCollection,Trac
   // calculate Doppler factor for decay
   // Gx[0],Gy[0],Gz[0] are first interaction positon
   if(rHit.E>0.)
-    for(i=0;i<GHit.GfoldAB;i++)
+    for(Int_t i=0;i<GHit.GfoldAB;i++)
       pDec.df = CalculateDopplerFactor(pDec,GHit.Gx[0],GHit.Gy[0],GHit.Gz[0]);
   
   // printf("fold %d\nEND OF EVENT\n",GHit.GfoldAB);
   // getc(stdin);
 
   tree->Fill();
-  // IonFill++;
+  IonFill++;
 }
 //=====================================================================================
 void Results::ProjLabScattAngle()

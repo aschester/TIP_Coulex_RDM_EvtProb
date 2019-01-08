@@ -55,11 +55,12 @@ void RunAction::BeginOfRunAction(const G4Run*)
   // 	 << " MeV*cm2/mg" << G4endl;  
 
   G4cout<<" Beginning of run "<<G4endl;
+  gettimeofday(&ts,NULL);
+
   thePhysicsList->getReaction()->TargetFaceCrossSection();
   recoilA=thePhysicsList->getReaction()->getTargetRecoilA();
   recoilZ=thePhysicsList->getReaction()->getTargetRecoilZ();
   theResults->SetupRun();
-  gettimeofday(&ts,NULL);
 }
 
 
@@ -90,5 +91,10 @@ void RunAction::EndOfRunAction(const G4Run*)
   G4cout<<" Number density of recoils in the target is: "<<Nv/Avogadro*1000.<<" [milli-mole/cm3]"<<G4endl;
   G4cout<<" Number of excitation is                   : "<<p<<" per million beam particles"<<G4endl;
   G4cout<<" Results are based on simulation of : "<<thePhysicsList->getReaction()->GetNumberOfSimulatedReactions()<<" reactions"<<G4endl;
-}
+  G4cout<<" Dropped                            : "<<thePhysicsList->getReaction()->GetRxnDroppedE()<<" reactions due to energy cutoff"<<G4endl;
+  G4cout<<" Dropped                            : "<<thePhysicsList->getReaction()->GetRxnDroppedKsi()<<" reactions due to adiabaticity xi out of range"<<G4endl;
+  G4cout<<" Dropped                            : "<<thePhysicsList->getReaction()->GetRxnDroppedRand()<<" reactions due to XC RNG"<<G4endl;
+
+
+} 
 

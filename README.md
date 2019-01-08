@@ -4,11 +4,9 @@ Maintainer: Aaron Chester
 
 ## Description
 
-GEANT4 code implementing TIP/TIGRESS RDM using a single-step Coulex.
+GEANT4 code implementing TIP/TIGRESS RDM using a single-step Coulex. Unweighted events are simulated based on their probabilty defined as the XC of the reaction at the depth in the target divided by the XC at the surface. Gives integer bin counts. Relatively untested. The author denys all responsibility for misuse.
 
 At present, the TIP CsI wall/ball and GRIFFIN/TIGRESS array geometries are implemented.
-
-This code requires GEANT4 version 10.x (see the version 9.4 branch for the most recent code compatible with version 9).  If the ROOT interface is needed, the code in the version 9.4 branch should be used instead.
 
 ## Installation
 

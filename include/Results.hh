@@ -46,8 +46,8 @@ typedef struct{
     Double_t E;
     Double_t b;
     Double_t w;
-    Double_t path;  // path length in material in mg/cm^2
-    Double_t Eloss; // energy loss on path
+    // Double_t path;  // path length in material in mg/cm^2
+    // Double_t Eloss; // energy loss on path
     Double_t df;    // doppler shift factor sqrt(1-b*b)/[1-b*e_g.e_p]
     Double_t t;     // time
  } IonInf;
@@ -145,14 +145,15 @@ public:
 private:
   // ROOT Tree stuff
   TTree* tree;
-  G4int  IonFill;
+  // G4int  IonFill;
   
   Projectile           *theProjectile;
   Recoil               *theRecoil;
   DetectorConstruction *theDetector;
   
   IonStat       stat;
-  IonInf        gun,pBIn,pTIn,pRIn,pROut,pTOut,pDIn,pDOut,rROut,rTOut,rDIn,rDOut,pDec,rDec,rDTrack;
+  IonInf        gun,pBIn,pTIn,pRIn,pROut,pTOut,pDIn,pDOut,rROut,rTOut,rDIn,rDOut,pDec,rDec;
+  // IonInf        rDTrack; // not currently used
   CsIInf        pHit,rHit;
   ReactInf      react;
   G4int         Ap,Zp,Ar,Zr;
